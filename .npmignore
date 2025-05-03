@@ -1,0 +1,19 @@
+# Source files
+src/
+
+# TypeScript config
+tsconfig.json
+
+# Git files
+.git/
+.gitignore
+
+# Development files
+node_modules/
+tests/
+.vscode/
+.idea/
+
+# Misc
+.DS_Store
+*.log 

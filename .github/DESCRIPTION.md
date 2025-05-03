@@ -1,0 +1,1 @@
+A lightweight, UI-free TypeScript Firebase Authentication SDK that provides a clean, reusable interface for Firebase Auth services. Supports multiple auth providers including Google, Facebook, Apple, GitHub, and email/password authentication. 
