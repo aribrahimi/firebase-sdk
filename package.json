@@ -9,7 +9,11 @@
     "test": "jest",
     "lint": "eslint --ext .ts ./src",
     "format": "prettier --write \"src/**/*.ts\"",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "release:patch": "./version-bump.sh patch",
+    "release:minor": "./version-bump.sh minor",
+    "release:major": "./version-bump.sh major",
+    "publish:npm": "./npm-publish.sh"
   },
   "files": [
     "dist",
@@ -17,6 +21,18 @@
     "LICENSE",
     "SETUP.md"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aribrahimi/firebase-auth-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aribrahimi/firebase-auth-sdk/issues"
+  },
+  "homepage": "https://github.com/aribrahimi/firebase-auth-sdk#readme",
   "keywords": [
     "firebase",
     "auth",
