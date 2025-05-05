@@ -15,6 +15,30 @@ export interface EnabledProviders {
   github?: boolean;
 }
 
+/**
+ * Standardized user object with authentication token
+ */
+export interface AuthenticatedUser {
+  uid: string;
+  email: string | null;
+  displayName: string | null;
+  photoURL: string | null;
+  emailVerified: boolean;
+  token: string;
+}
+
+/**
+ * Result wrapper for authentication operations
+ */
+export interface AuthResult<T = AuthenticatedUser | null> {
+  success: boolean;
+  data: T | null;
+  error?: {
+    code: string;
+    message: string;
+  };
+}
+
 export interface FirebaseAuthSDK {
   signInWithGoogle(): Promise<UserCredential | null>;
   signInWithFacebook(): Promise<UserCredential | null>;
@@ -27,6 +51,18 @@ export interface FirebaseAuthSDK {
   signOut(): Promise<void>;
   getCurrentUser(): User | null;
   onAuthStateChanged(callback: (user: User | null) => void): Unsubscribe;
+  
+  // Additional methods used in the application
+  verifyResetCode?(code: string): Promise<string>;
+  completePasswordReset?(code: string, newPassword: string): Promise<void>;
+  changePassword?(currentPassword: string, newPassword: string): Promise<void>;
+  sendVerificationEmail?(): Promise<void>;
+  verifyEmail?(code: string): Promise<void>;
+  getUserRole?(userId: string): Promise<string>;
+  ensureUserExists?(user: User, defaultRole: string): Promise<void>;
+  
+  // New token management methods
+  getAuthenticatedUser(forceRefresh?: boolean): Promise<AuthResult<AuthenticatedUser>>;
 }
 
 export type AuthSDKInstance = FirebaseAuthSDK; 

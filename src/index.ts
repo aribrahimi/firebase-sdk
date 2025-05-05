@@ -5,6 +5,16 @@ import { signInWithEmail, signUpWithEmail, sendPasswordReset, sendEmailVerificat
 import { signOut } from './auth/signOut';
 import { getCurrentUser } from './auth/getCurrentUser';
 import { onAuthStateChanged } from './auth/onAuthStateChanged';
+import { getAuthenticatedUser } from './auth/getAuthenticatedUser';
+import { 
+  verifyResetCode, 
+  completePasswordReset, 
+  changePassword, 
+  sendVerificationEmail, 
+  verifyEmail, 
+  getUserRole, 
+  ensureUserExists 
+} from './auth/extendedAuth';
 
 /**
  * Create an instance of the Firebase Auth SDK
@@ -28,12 +38,22 @@ export function createAuthSDK(config: FirebaseConfig): FirebaseAuthSDK {
     sendEmailVerificationToUser,
     signOut,
     getCurrentUser,
-    onAuthStateChanged
+    onAuthStateChanged,
+    getAuthenticatedUser,
+    
+    // Extended methods
+    verifyResetCode,
+    completePasswordReset,
+    changePassword,
+    sendVerificationEmail,
+    verifyEmail,
+    getUserRole,
+    ensureUserExists
   };
   
   return authSDK;
 }
 
 // Export types
-export { FirebaseConfig, EnabledProviders } from '../types';
+export { FirebaseConfig, EnabledProviders, AuthenticatedUser, AuthResult } from '../types';
 export type { User, UserCredential, Unsubscribe } from 'firebase/auth'; 
