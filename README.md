@@ -13,15 +13,15 @@ A type-safe, UI-free Firebase Authentication SDK that provides a clean and easy-
 ## Installation
 
 ```bash
-npm install @yourorg/firebase-auth-sdk
+npm install @kaayan/firebase-auth-sdk
 # or
-yarn add @yourorg/firebase-auth-sdk
+yarn add @kaayan/firebase-auth-sdk
 ```
 
 ## Basic Usage
 
 ```typescript
-import { createAuthSDK } from '@yourorg/firebase-auth-sdk';
+import { createAuthSDK } from '@kaayan/firebase-auth-sdk';
 
 // Initialize the SDK
 const auth = createAuthSDK({
