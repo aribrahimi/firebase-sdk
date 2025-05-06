@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/@kaayan/firebase-auth-sdk.svg)](https://www.npmjs.com/package/@kaayan/firebase-auth-sdk)
+
 # Firebase Authentication SDK
 
 A type-safe, UI-free Firebase Authentication SDK that provides a clean and easy-to-use API for authenticating users in web applications.
@@ -25,10 +27,12 @@ import { createAuthSDK } from '@kaayan/firebase-auth-sdk';
 
 // Initialize the SDK
 const auth = createAuthSDK({
-  apiKey: 'your-api-key',
-  authDomain: 'your-app.firebaseapp.com',
-  projectId: 'your-project-id',
-  appId: 'your-app-id',
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,  //  your-api-key
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,  // your-app.firebaseapp.com
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,   // your-project-id
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,   // your-storage-bucket
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,  // your-app-id
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID   // your-appId
   enabledProviders: {
     google: true,
     facebook: true,
@@ -191,6 +195,7 @@ export const config = {
    - Firebase ID tokens expire after 1 hour
    - Implement refresh logic for long-lasting sessions
 
-## License
 
-MIT
+
+🛡 Licensed under MIT • Maintained by  alireza ibrahimi
+📫 Questions? Email ar.ibrahimy@gmail.com or open an issue on [GitHub](https://github.com/aribrahimi/firebase-sdk)
