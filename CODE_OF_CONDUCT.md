@@ -33,7 +33,7 @@ This Code of Conduct applies within all project spaces—GitHub issues, pull req
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the maintainer at [your-email@example.com].
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the maintainer at [ar.ibrahimy@example.com].
 
 All complaints will be reviewed and investigated fairly and respectfully.
 
